@@ -54,6 +54,7 @@ NEXT_PUBLIC_MORALIS_API_KEY="<YOUR_MORALIS_API_KEY>"
 
 ## APIs url configuration
 Update APIs url in [constants.js](./utils/constants.js).
+
 ```JavaScript
 export const APIs_BASE_URL =
   process.env.NODE_ENV === "production"

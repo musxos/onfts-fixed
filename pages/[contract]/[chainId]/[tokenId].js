@@ -9,9 +9,15 @@ import WalletInfo from "../../../components/WalletInfo";
 import { Web3UserContext } from "../../../context";
 import { switchNetwork } from "../../../context/utils";
 import traverseAbi from "../../../assets/abis/traverse.abi..json";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page({ nftInfo, isInfoLoaded, reason }) {
+  
+ 
+
+
+  
+  
   const {
     metadata,
     contractAddress,
@@ -90,6 +96,59 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
   );
   optionsLists.push({ chainId: null, chainName: "Select Chain" });
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    const [_native_price,setPrice] = useState(0)
+
+    const address_native ={
+      avax : '0x1CE0c2827e2eF14D5C4f29a091d735A204794041',
+      eth : '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+      bnb : '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+      fantom : '0xAD29AbB318791D579433D831ed122aFeAf29dcfe',
+      polygon :'0xCC42724C6683B7E57334c4E856f4c9965ED682bD'
+     }
+
+        const price =(token_address)=>{
+          var config = {
+            method: 'get',
+          maxBodyLength: Infinity,
+            url: `https://deep-index.moralis.io/api/v2/erc20/${token_address}/price?chain=bsc&exchange=pancakeswap-v2`,
+            headers: { 
+              'accept': 'application/json', 
+              'X-API-Key': 'tiHvMOddWxkAqm0AzSC4a1aMX7V0xUnQaVhUdPnXOnfKbCFnchxNVlUV8LmeJBqS'
+            }
+          };
+          
+          axios(config)
+          .then(function (response) {
+            setPrice(JSON.parse(JSON.stringify(response.data.usdPrice)));
+            
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        }
+     
+        let chainamount =  Number(15/_native_price);
+      useEffect(()=>{
+
+        if(sourceChain =="Avalanche"){
+          price(address_native.avax)
+        }else if(sourceChain=="Ethereum"){
+          price(address_native.eth)
+        }else if(sourceChain=="BSC"){
+          price(address_native.bsc)
+        }else if(sourceChain =="Fantom" ){
+          price(address_native.fantom)
+        }else if(sourceChain=="Polygon"){
+          price(address_native.polygon)
+        }
+
+      },[sourceChain])
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <>
       <Meta title={name} description={description} />
@@ -150,12 +209,12 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                         ))}
                       </select>
 
-                      <div class="form-group">
+                      <div class="form-group" style={{display:"none"}}>
                         <label htmlFor="amount">Amount</label>
                         <input
                           id="amount"
                           type="number"
-                          min="0"
+                          value={chainamount}
                           class="form-control"
                           onChange={onInputChange}
                         />
@@ -170,8 +229,10 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                         >
                           Traverse
                         </button>
-                      )}
 
+                       
+                      )}
+                     
                       {isWalletConnected && !isSameChain && (
                         <button
                           className="btn btn-outline-secondary button-round w-100"

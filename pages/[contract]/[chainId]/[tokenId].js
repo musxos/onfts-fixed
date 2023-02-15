@@ -63,7 +63,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
       contractAddress
     );
 
-    const input = Number(inputValue.current);
+    const input = Number(chainamount);
     const payable = input > 0 ? input : 1;
 
     try {

@@ -147,7 +147,8 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
 
       },[sourceChain])
 
-      let chainamount =  Number(20/_native_price);
+      let chainamount2 =  Number(20/_native_price);
+      let chainamount =  Number(chainamount2.toFixed(3));
       console.log(_native_price);
       console.log(sourceChain);
       console.log(chainamount);

@@ -130,7 +130,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
           });
         }
      
-        let chainamount =  Number(15/_native_price);
+        
       useEffect(()=>{
 
         if(sourceChain =="Avalanche"){
@@ -147,7 +147,10 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
 
       },[sourceChain])
 
-
+      let chainamount =  Number(15/_native_price);
+      console.log(_native_price);
+      console.log(sourceChain);
+      console.log(chainamount);
 //////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <>

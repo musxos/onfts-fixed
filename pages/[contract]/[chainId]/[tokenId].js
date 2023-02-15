@@ -138,7 +138,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
         }else if(sourceChain=="Ethereum"){
           price(address_native.eth)
         }else if(sourceChain=="BSC"){
-          price(address_native.bsc)
+          price(address_native.bnb)
         }else if(sourceChain =="Fantom" ){
           price(address_native.fantom)
         }else if(sourceChain=="Polygon"){

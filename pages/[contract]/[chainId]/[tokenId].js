@@ -212,7 +212,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                         ))}
                       </select>
 
-                      <div class="form-group" style={{display:"none"}}>
+                      <div class="form-group" }>
                         <label htmlFor="amount">Amount</label>
                         <input
                           id="amount"

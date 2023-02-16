@@ -148,13 +148,9 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
       },[sourceChain])
 
       
-      if (sourceChain === 'X' || sourceChain === 'Y' || destChainInfo === 'X' || destChainInfo === 'Y') {
-        let chainamount2 =  Number(15/_native_price);
-        let chainamount =  Number(chainamount2.toFixed(3));
-      } else {
-        let chainamount2 =  Number(35/_native_price);
-        let chainamount =  Number(chainamount2.toFixed(3));
-      }
+      let chainamount2 =  Number(30/_native_price);
+      let chainamount =  Number(chainamount2.toFixed(3));
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <>

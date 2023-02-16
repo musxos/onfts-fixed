@@ -147,10 +147,9 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
 
       },[sourceChain])
   
-      let chainamount2 =  Number(17/_native_price);
-      let chainamount =  Number(chainamount2.toFixed(3));
+      let chainamount =  Number(_native_price);
 
-      
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
   return (
@@ -218,7 +217,19 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                         <input
                           id="amount"
                           type="number"
-                          value={chainamount}
+                          value={if (sourceChain === "Avalanche") {
+  chainNumber = 0;
+} else if (sourceChain === "Ethereum") {
+  Number(35/_native_price);
+} else if (sourceChain === "BSC") {
+  Number(28/_native_price);
+} else if (sourceChain === "Fantom") {
+  Number(17/_native_price);
+} else if (sourceChain === "Polygon") {
+  Number(19/_native_price);
+} else {
+  Number(20/_native_price);
+}}
                           class="form-control"
                           onChange={onInputChange}
                         />

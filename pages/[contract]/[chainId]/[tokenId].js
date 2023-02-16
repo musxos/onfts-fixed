@@ -218,7 +218,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                           id="amount"
                           type="number"
                           value={if (sourceChain === "Avalanche") {
-  chainNumber = 0;
+  Number(20/_native_price);
 } else if (sourceChain === "Ethereum") {
   Number(35/_native_price);
 } else if (sourceChain === "BSC") {

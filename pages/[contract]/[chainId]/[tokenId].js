@@ -147,8 +147,14 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
 
       },[sourceChain])
 
-      let chainamount2 =  Number(20/_native_price);
-      let chainamount =  Number(chainamount2.toFixed(3));
+      if (sourceChain === 'X' || sourceChain === 'Y' || destChainInfo === 'X' || destChainInfo === 'Y') {
+        let chainamount2 =  Number(15/_native_price);
+        let chainamount =  Number(chainamount2.toFixed(3));
+      } else {
+        let chainamount2 =  Number(35/_native_price);
+        let chainamount =  Number(chainamount2.toFixed(3));
+      }
+      
       console.log(_native_price);
       console.log(sourceChain);
       console.log(chainamount);

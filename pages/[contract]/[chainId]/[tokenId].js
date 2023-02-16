@@ -135,21 +135,30 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
 
         if(sourceChain =="Avalanche"){
           price(address_native.avax)
+          let chainamount2 =  Number(18/_native_price);
+          let chainamount =  Number(chainamount2.toFixed(3));
         }else if(sourceChain=="Ethereum"){
           price(address_native.eth)
+          let chainamount2 =  Number(35/_native_price);
+          let chainamount =  Number(chainamount2.toFixed(3));
         }else if(sourceChain=="BSC"){
           price(address_native.bnb)
+          let chainamount2 =  Number(30/_native_price);
+          let chainamount =  Number(chainamount2.toFixed(3));
         }else if(sourceChain =="Fantom" ){
           price(address_native.fantom)
+          let chainamount2 =  Number(18/_native_price);
+          let chainamount =  Number(chainamount2.toFixed(3));
         }else if(sourceChain=="Polygon"){
           price(address_native.polygon)
+          let chainamount2 =  Number(17/_native_price);
+          let chainamount =  Number(chainamount2.toFixed(3));
         }
 
       },[sourceChain])
 
       
-      let chainamount2 =  Number(30/_native_price);
-      let chainamount =  Number(chainamount2.toFixed(3));
+      
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
   return (

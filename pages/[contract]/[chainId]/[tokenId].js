@@ -162,6 +162,8 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
         } else {
           chainamount =  Number(20/_native_price);
         }
+  
+  let chainamountfixed = Number(chainamount.toFixed(3));
 
 
 
@@ -231,7 +233,7 @@ export default function Page({ nftInfo, isInfoLoaded, reason }) {
                         <input
                           id="amount"
                           type="number"
-                          value={chainamount}
+                          value={chainamountfixed}
                           class="form-control"
                           onChange={onInputChange}
                         />

@@ -58,7 +58,7 @@ export const chainIdToInfo = {
   },
   "0x89": {
     lzChainId: 109,
-    rpcURL: "https://polygon-rpc.com",
+    rpcURL: "https://polygon-bor.publicnode.com	",
     blockExplorer: "https://polygonscan.com",
     chainName: "Polygon",
     configs: {
@@ -69,7 +69,7 @@ export const chainIdToInfo = {
         symbol: "MATIC",
         decimals: 18,
       },
-      rpcUrls: ["https://polygon-rpc.com/"],
+      rpcUrls: ["https://polygon-bor.publicnode.com	"],
       blockExplorerUrls: ["https://polygonscan.com/"],
     },
   },
@@ -109,7 +109,7 @@ export const chainIdToInfo = {
   },
   "0xfa": {
     lzChainId: 112,
-    rpcURL: "https://rpc.ftm.tools/",
+    rpcURL: "https://rpcapi.fantom.network",
     blockExplorer: "https://ftmscan.com",
     chainName: "Fantom",
     configs: {
@@ -120,7 +120,7 @@ export const chainIdToInfo = {
         symbol: "FTM",
         decimals: 18,
       },
-      rpcUrls: ["https://rpcapi.fantom.network/"],
+      rpcUrls: ["https://rpcapi.fantom.network"],
       blockExplorerUrls: ["https://ftmscan.com/"],
     },
   },
